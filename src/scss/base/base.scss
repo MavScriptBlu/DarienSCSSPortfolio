@@ -1,0 +1,26 @@
+@use '../utils/utils' as *;
+
+body {
+  font-family: $font-stack;
+  background-color: $dark-bg;
+  color: $text-color;
+  padding-top: 100px;
+}
+
+a {
+  color: $accent-color;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:focus {
+    outline: 2px dotted $accent-color;
+  }
+}
+
+img {
+  border: 2px dashed $accent-color;
+  box-shadow: 2px 2px #444;
+}

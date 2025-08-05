@@ -1,0 +1,9 @@
+@use '../utils/utils' as *;
+
+.footer {
+  text-align: center;
+  background-color: $dark-bg;
+  color: $accent-color;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+}

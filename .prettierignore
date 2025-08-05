@@ -1,0 +1,23 @@
+# Prettier ignore file
+# Files that should not be formatted by Prettier
+
+# Documentation files with specific formatting
+FIXES_APPLIED.md
+
+# Node modules (already ignored by default, but explicit)
+node_modules/
+
+# Build outputs
+dist/
+build/
+
+# CSS files in source directories (should only be in dist/)
+src/**/*.css
+src/**/*.css.map
+
+# Lock files (should not be formatted)
+package-lock.json
+yarn.lock
+
+# Git files
+.gitignore

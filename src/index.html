@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Darien Johnas - Software Developer Portfolio. Showcasing web development projects and skills in React, Node.js, and modern JavaScript." />
+    <title>Darien Johnas – Web Development Portfolio</title>
+    <link rel="stylesheet" href="../dist/main.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=VT323&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body id="body">
+    <header class="header" role="banner">
+      <h1>Darien Johnas</h1>
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <a class="nav__skip" href="#main">Skip to main content</a>
+        <div class="nav__logo">Darien.dev</div>
+        <ul class="nav__list">
+          <li class="nav__item"><a href="#projects" aria-describedby="projects-section">Projects</a></li>
+          <li class="nav__item"><a href="#skills">Skills</a></li>
+          <li class="nav__item"><a href="#resume">Resume</a></li>
+          <li class="nav__item"><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main" role="main">
+      <section id="bio" class="intro-banner" aria-labelledby="intro-heading">
+        <div class="intro-content">
+          <img src="img/profile.svg" alt="Professional photo of Darien Johnas, software developer" />
+          <div class="intro-text">
+            <h2 id="intro-heading" class="visually-hidden">About Darien Johnas</h2>
+            <p>
+              Passionate software developer with expertise in full-stack web
+              development and modern JavaScript frameworks. I create innovative
+              applications including weather-based clothing recommendations,
+              responsive platforms, and robust backend APIs. Currently building
+              my skills through TripleTen's Software Engineering program while
+              developing real-world projects with React, Node.js, and MongoDB.
+            </p>
+            <div class="intro-actions">
+              <a href="#resume" class="btn" role="button">Resume</a>
+              <a href="#skills" class="btn" role="button">Skills</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="projects" aria-labelledby="projects-heading">
+        <h2 id="projects-heading">Latest Projects</h2>
+        <div class="project-cards">
+          <article class="card">
+            <img src="img/todo-app.jpeg" alt="Preview of ToDo App project" />
+            <h3>ToDo App</h3>
+            <p>A simple and intuitive task management app built with React.</p>
+          </article>
+
+          <article class="card">
+            <img src="img/project2.svg" alt="Preview of WTWR project" />
+            <h3>WTWR – What to Wear Right Now</h3>
+            <p>
+              React app with weather-based outfit suggestions, modals, and
+              responsive toggles.
+            </p>
+          </article>
+          <article class="card">
+            <img
+              src="img/project3.svg"
+              alt="Preview of Spots Platform project"
+            />
+            <h3>Spots Platform</h3>
+            <p>
+              Responsive layout with Webpack optimization, hover effects, and
+              form validation.
+            </p>
+          </article>
+          <article class="card">
+            <img
+              src="img/craftandbrew.jpeg"
+              alt="Preview of Craft and Brew project"
+            />
+            <h3>Craft and Brew</h3>
+            <p>
+              A responsive coffee shop website with modern design, interactive
+              menu, and reservation system.
+              <a
+                href="https://iibamblue.github.io/se_project_coffeeshop/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >View Live Site</a
+              >
+            </p>
+          </article>
+        </div>
+        <a href="#" class="btn" role="button" aria-label="View all projects page">View All Projects</a>
+      </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+      <p>&copy; Darien Johnas 2025</p>
+    </footer>
+  </body>
+</html>

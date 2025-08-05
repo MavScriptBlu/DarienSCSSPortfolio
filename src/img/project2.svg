@@ -1,0 +1,15 @@
+<!-- This is a placeholder SVG for project2.jpg -->
+<svg width="400" height="250" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="250" fill="#89CFF0"/>
+  <circle cx="100" cy="70" r="30" fill="#FFD700"/>
+  <rect x="150" y="40" width="200" height="60" fill="#87CEEB" stroke="#2E2E2E" stroke-width="2"/>
+  <text x="250" y="65" text-anchor="middle" fill="#2E2E2E" font-family="Arial" font-size="14" font-weight="bold">Weather: 72°F</text>
+  <text x="250" y="85" text-anchor="middle" fill="#2E2E2E" font-family="Arial" font-size="12">Sunny</text>
+  <rect x="50" y="130" width="80" height="80" fill="#fff" stroke="#2E2E2E" stroke-width="2"/>
+  <text x="90" y="150" text-anchor="middle" fill="#2E2E2E" font-family="Arial" font-size="10">T-Shirt</text>
+  <rect x="160" y="130" width="80" height="80" fill="#fff" stroke="#2E2E2E" stroke-width="2"/>
+  <text x="200" y="150" text-anchor="middle" fill="#2E2E2E" font-family="Arial" font-size="10">Shorts</text>
+  <rect x="270" y="130" width="80" height="80" fill="#fff" stroke="#2E2E2E" stroke-width="2"/>
+  <text x="310" y="150" text-anchor="middle" fill="#2E2E2E" font-family="Arial" font-size="10">Sneakers</text>
+  <text x="200" y="230" text-anchor="middle" fill="#2E2E2E" font-family="Arial" font-size="14" font-weight="bold">WTWR - What to Wear</text>
+</svg>

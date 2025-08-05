@@ -1,0 +1,36 @@
+<!-- Subtle background pattern for intro banner -->
+<svg width="1920" height="1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Very subtle gradient that won't interfere with existing design -->
+    <linearGradient id="subtleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2E2E2E;stop-opacity:0.05" />
+      <stop offset="50%" style="stop-color:#f7c5cc;stop-opacity:0.03" />
+      <stop offset="100%" style="stop-color:#2E2E2E;stop-opacity:0.05" />
+    </linearGradient>
+    
+    <!-- Subtle pattern -->
+    <pattern id="subtlePattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+      <circle cx="50" cy="50" r="1" fill="#f7c5cc" opacity="0.1"/>
+      <circle cx="25" cy="25" r="0.5" fill="#f7c5cc" opacity="0.08"/>
+      <circle cx="75" cy="75" r="0.5" fill="#f7c5cc" opacity="0.08"/>
+    </pattern>
+  </defs>
+  
+  <!-- Transparent base -->
+  <rect width="1920" height="1080" fill="transparent" />
+  
+  <!-- Very subtle gradient overlay -->
+  <rect width="1920" height="1080" fill="url(#subtleGrad)" />
+  
+  <!-- Extremely subtle pattern -->
+  <rect width="1920" height="1080" fill="url(#subtlePattern)" />
+  
+  <!-- Subtle geometric shapes that won't interfere -->
+  <g opacity="0.02">
+    <circle cx="200" cy="200" r="80" fill="#f7c5cc" />
+    <circle cx="1720" cy="300" r="120" fill="#f7c5cc" />
+    <circle cx="400" cy="900" r="60" fill="#f7c5cc" />
+    <circle cx="1500" cy="800" r="100" fill="#f7c5cc" />
+    <rect x="800" y="400" width="320" height="280" rx="20" fill="#f7c5cc" transform="rotate(15 960 540)" />
+  </g>
+</svg>

@@ -1,0 +1,19 @@
+{
+  "name": "darien-scss-portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "sass --no-source-map src/scss/main.scss dist/main.css",
+    "watch": "sass --watch --no-source-map src/scss/main.scss dist/main.css",
+    "build:dev": "sass src/scss/main.scss dist/main.css",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier --write \"src/**/*.{scss,css,html,js,json}\"",
+    "format:check": "prettier --check \"src/**/*.{scss,css,html,js,json}\""
+  },
+  "dependencies": {
+    "sass": "^1.79.3"
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2"
+  }
+}

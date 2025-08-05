@@ -1,0 +1,77 @@
+@use 'sass:color';
+@use '../utils/utils' as *;
+
+.projects {
+  background-color: $dark-bg;
+  padding: 3rem 1rem;
+
+  h2 {
+    color: $accent-color;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .project-cards {
+    @include flex-center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .card {
+    background: #111;
+    border: 2px solid $accent-color;
+    color: $text-color;
+    width: 300px;
+    padding: 1rem;
+    box-shadow: 3px 3px #444;
+    transition: all 0.3s ease;
+    
+    // Improved accessibility for focus and hover
+    &:hover,
+    &:focus-within {
+      transform: translateY(-5px);
+      box-shadow: 5px 5px #444;
+      border-color: color.adjust($accent-color, $lightness: 10%);
+      outline: 2px solid $accent-color;
+      outline-offset: 2px;
+    }
+
+    img {
+      width: 100%;
+      margin-bottom: 1rem;
+    }
+
+    h3 {
+      color: $primary-color;
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+    }
+  }
+
+  .btn {
+    margin: 2rem auto 0;
+    display: block;
+    text-align: center;
+    background: $primary-color;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    font-family: $font-stack;
+    border: 2px solid #fff;
+    box-shadow: 2px 2px #444;
+    width: fit-content;
+    text-decoration: none;
+    transition: all 0.3s ease;
+
+    &:hover,
+    &:focus {
+      background: color.adjust($primary-color, $lightness: -10%);
+      transform: translateY(-2px);
+      outline: 2px solid $accent-color;
+      outline-offset: 2px;
+    }
+  }
+}

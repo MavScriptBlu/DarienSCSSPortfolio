@@ -1,0 +1,8 @@
+<!-- This is a placeholder SVG for profile.jpg -->
+<svg width="300" height="300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="300" fill="#AAF0D1"/>
+  <circle cx="150" cy="120" r="50" fill="#2E2E2E"/>
+  <rect x="100" y="180" width="100" height="80" rx="40" fill="#2E2E2E"/>
+  <text x="150" y="250" text-anchor="middle" fill="#2E2E2E" font-family="Arial" font-size="16">Profile Photo</text>
+  <text x="150" y="280" text-anchor="middle" fill="#2E2E2E" font-family="Arial" font-size="12">Darien Johnas</text>
+</svg>
