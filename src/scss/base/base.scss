@@ -1,3 +1,4 @@
+@use 'sass:color';
 @use '../utils/utils' as *;
 
 body {
@@ -5,6 +6,13 @@ body {
   background-color: $dark-bg;
   color: $text-color;
   padding-top: 100px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+// Section spacing
+section {
+  scroll-margin-top: 100px; // Account for fixed header
 }
 
 a {
@@ -23,4 +31,32 @@ a {
 img {
   border: 2px dashed $accent-color;
   box-shadow: 2px 2px #444;
+  max-width: 100%;
+  height: auto;
+}
+
+// Common button styles
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: $primary-color;
+  color: #fff;
+  border: 2px solid #fff;
+  box-shadow: 2px 2px #444;
+  cursor: pointer;
+  font-family: $font-stack;
+  font-size: 1rem;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+
+  &:hover,
+  &:focus {
+    background: color.adjust($primary-color, $lightness: -10%);
+    transform: translateY(-2px);
+    outline: 2px solid $accent-color;
+    outline-offset: 2px;
+    box-shadow: 3px 3px #444;
+  }
 }

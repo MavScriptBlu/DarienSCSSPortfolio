@@ -12,20 +12,27 @@
   }
 
   .project-cards {
-    @include flex-center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
-    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    @include responsive {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
   }
 
   .card {
     background: #111;
     border: 2px solid $accent-color;
     color: $text-color;
-    width: 300px;
     padding: 1rem;
     box-shadow: 3px 3px #444;
     transition: all 0.3s ease;
-    
+    border-radius: 8px;
+
     // Improved accessibility for focus and hover
     &:hover,
     &:focus-within {

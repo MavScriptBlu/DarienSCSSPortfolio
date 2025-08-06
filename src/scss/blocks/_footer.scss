@@ -6,4 +6,11 @@
   color: $accent-color;
   padding: 2rem 1rem;
   font-size: 0.9rem;
+  border-top: 2px solid $accent-color;
+  margin-top: 2rem;
+
+  p {
+    margin: 0;
+    font-family: $font-stack;
+  }
 }

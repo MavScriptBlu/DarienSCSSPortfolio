@@ -12,6 +12,8 @@ build/
 # CSS files in source directories (should only be in dist/)
 src/**/*.css
 src/**/*.css.map
+*.css
+**/*.css.map
 
 # IDE and editor files
 .vscode/
@@ -48,6 +50,9 @@ pids/
 # Environment variables
 .env
 .env.local
+
+# Development documentation (private)
+DEVELOPMENT_LOG.md
 .env.development.local
 .env.test.local
 .env.production.local

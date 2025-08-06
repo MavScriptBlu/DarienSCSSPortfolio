@@ -1,0 +1,99 @@
+@use 'sass:color';
+@use '../utils/utils' as *;
+
+.resume {
+  background:
+    url('../img/background-subtle.svg') no-repeat center center / cover,
+    linear-gradient(45deg, #cdb4db, #aaf0d1);
+  color: #222;
+  padding: 4rem 1rem;
+
+  h2 {
+    color: #222;
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+  }
+
+  .resume-content {
+    max-width: 800px;
+    margin: 0 auto;
+    display: grid;
+    gap: 2rem;
+
+    @include responsive {
+      gap: 1.5rem;
+    }
+  }
+
+  .resume-section {
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid #333;
+    box-shadow: 3px 3px #444;
+    padding: 2rem;
+    border-radius: 8px;
+
+    h3 {
+      color: $primary-color;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 2px dashed #333;
+      padding-bottom: 0.5rem;
+    }
+  }
+
+  .resume-item {
+    margin-bottom: 1.5rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    h4 {
+      color: #333;
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .duration {
+      color: $primary-color;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      font-style: italic;
+    }
+
+    p {
+      line-height: 1.6;
+      margin-bottom: 0.5rem;
+
+      &.duration {
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+
+  .download-btn {
+    background: $primary-color;
+    color: #fff;
+    padding: 1rem 2rem;
+    border: 2px solid #333;
+    box-shadow: 3px 3px #444;
+    cursor: pointer;
+    font-family: $font-stack;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+    margin-top: 2rem;
+    border-radius: 4px;
+    font-size: 1.1rem;
+
+    &:hover,
+    &:focus {
+      background: color.adjust($primary-color, $lightness: -10%);
+      transform: translateY(-2px);
+      outline: 2px solid #333;
+      outline-offset: 2px;
+      box-shadow: 5px 5px #444;
+    }
+  }
+}

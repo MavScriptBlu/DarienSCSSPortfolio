@@ -155,27 +155,29 @@
   }
 
   @include responsive {
-    flex-direction: column;
-
-    &__list {
+    .nav {
       flex-direction: column;
-      align-items: center;
-      margin-top: 1rem;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease;
 
-      &.open {
-        max-height: 300px;
+      &__list {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 1rem;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        width: 100%;
+
+        &.open {
+          max-height: 300px;
+        }
       }
-    }
 
-    &__item a {
-      @include responsive {
+      &__item a {
         padding: 1rem;
         width: 100%;
         text-align: center;
         border-bottom: 1px solid rgba($accent-color, 0.2);
+        display: block;
 
         &:hover {
           background-color: rgba($accent-color, 0.1);

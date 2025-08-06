@@ -1,0 +1,76 @@
+@use '../utils/utils' as *;
+
+.skills {
+  background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+  padding: 4rem 1rem;
+
+  h2 {
+    color: $accent-color;
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    @include responsive {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  }
+
+  .skill-category {
+    background: #111;
+    border: 2px solid $accent-color;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 3px 3px #444;
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 5px 5px #444;
+      border-color: $primary-color;
+    }
+
+    h3 {
+      color: $primary-color;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      text-align: center;
+      border-bottom: 2px dashed $accent-color;
+      padding-bottom: 0.5rem;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        color: $text-color;
+        padding: 0.5rem 0;
+        position: relative;
+        padding-left: 1.5rem;
+        transition: color 0.3s ease;
+
+        &:before {
+          content: '▶';
+          position: absolute;
+          left: 0;
+          color: $accent-color;
+          font-size: 0.8rem;
+        }
+
+        &:hover {
+          color: $primary-color;
+          padding-left: 2rem;
+        }
+      }
+    }
+  }
+}
