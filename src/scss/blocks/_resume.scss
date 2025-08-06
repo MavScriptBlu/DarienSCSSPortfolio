@@ -62,11 +62,22 @@
       font-style: italic;
     }
 
+    .company {
+      color: #666;
+      font-size: 0.95rem;
+      font-style: italic;
+      margin-bottom: 0.5rem;
+    }
+
     p {
       line-height: 1.6;
       margin-bottom: 0.5rem;
 
       &.duration {
+        margin-bottom: 0.5rem;
+      }
+
+      &.company {
         margin-bottom: 0.5rem;
       }
     }

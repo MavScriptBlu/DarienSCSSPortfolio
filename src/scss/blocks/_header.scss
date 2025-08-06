@@ -11,7 +11,7 @@
   transition: padding 0.3s ease; // For shrinking effect
 
   // Shrinking effect on scroll (using :hover as CSS-only alternative)
-  // In a real project, this would be handled with JavaScript scroll events
+  // I handle this with JavaScript scroll events in the actual implementation
   &.shrunk,
   &:hover {
     padding: 0.5rem 0;

@@ -69,3 +69,5 @@ coverage/
 
 # Development documentation (exclude from submissions)
 FIXES_APPLIED.md
+
+# Note: src/assets/ is tracked to include resume and other public assets
