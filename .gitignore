@@ -70,4 +70,11 @@ coverage/
 # Development documentation (exclude from submissions)
 FIXES_APPLIED.md
 
+# Extension configuration files
+suppress-extension-warnings.js
+
+# Assets directory - hide everything except resume
+src/assets/*
+!src/assets/Darien-Johnas-Resume.pdf
+
 # Note: src/assets/ is tracked to include resume and other public assets

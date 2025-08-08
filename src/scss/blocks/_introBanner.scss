@@ -2,11 +2,12 @@
 @use '../utils/utils' as *;
 
 .intro-banner {
-  background: 
-    url('../img/background-subtle.svg') no-repeat center center / cover,
-    linear-gradient(45deg, #AAF0D1, #CDB4DB);
+  background:
+    url('../src/img/background-subtle.svg') no-repeat center center / cover,
+    linear-gradient(45deg, #aaf0d1, #cdb4db);
   color: #222;
   padding: 4rem 1rem;
+  margin-top: 2rem; // Add space for the fixed header
 
   .intro-content {
     @include flex-center(row);
@@ -21,14 +22,16 @@
       max-width: 600px;
 
       p {
-        font-size: 1rem;
+        font-size: 1.1rem;
         line-height: 1.6;
+        text-align: center;
       }
 
       .intro-actions {
         margin-top: 1rem;
         display: flex;
         gap: 1rem;
+        justify-content: center;
 
         .btn {
           background: $primary-color;
@@ -56,6 +59,10 @@
       flex-direction: column;
       text-align: center;
 
+      img {
+        width: 200px; // Make profile photo bigger in mobile
+      }
+
       .intro-text {
         .intro-actions {
           flex-direction: column;
@@ -63,6 +70,7 @@
 
           .btn {
             margin: 0.5rem 0;
+            width: 100%;
           }
         }
       }

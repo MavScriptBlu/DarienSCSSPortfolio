@@ -1,5 +1,27 @@
-$primary-color: #89CFF0;
+$primary-color: #89cff0;
 $accent-color: #f7c5cc;
-$dark-bg: #2E2E2E;
+$dark-bg: #2e2e2e;
 $text-color: #fff;
 $font-stack: 'VT323', monospace;
+
+// Modern accessibility support for forced colors mode
+@mixin forced-colors-support {
+  @media (forced-colors: active) {
+    // Use @supports to only apply forced-color-adjust in supporting browsers
+    @supports (forced-color-adjust: auto) {
+      forced-color-adjust: auto;
+    }
+
+    // These properties work in all browsers including Safari
+    border-color: ButtonBorder !important;
+    background-color: ButtonFace !important;
+    color: ButtonText !important;
+  }
+}
+
+@mixin high-contrast-support {
+  @media (prefers-contrast: high) {
+    border-width: 2px;
+    outline-width: 2px;
+  }
+}

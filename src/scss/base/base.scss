@@ -45,7 +45,7 @@ img {
   box-shadow: 2px 2px #444;
   cursor: pointer;
   font-family: $font-stack;
-  font-size: 1rem;
+  font-size: 1.1rem;
   text-decoration: none;
   text-align: center;
   transition: all 0.3s ease;
@@ -58,5 +58,14 @@ img {
     outline: 2px solid $accent-color;
     outline-offset: 2px;
     box-shadow: 3px 3px #444;
+  }
+
+  // Mobile: Make buttons as wide as cards
+  @include responsive {
+    width: 100%;
+    max-width: none;
+    padding: 1rem 1.5rem;
+    font-size: 1.2rem;
+    margin: 0.5rem auto;
   }
 }

@@ -17,26 +17,39 @@
 
   <body id="body">
     <header class="header" role="banner">
-      <h1>Darien Johnas</h1>
-      <nav class="nav" role="navigation" aria-label="Main navigation">
-        <a class="nav__skip" href="#main">Skip to main content</a>
-        <div class="nav__logo">Darien.dev</div>
-        <button
-          class="nav__menu-toggle"
-          aria-label="Toggle navigation menu"
-          aria-expanded="false"
-        >
-          <span class="nav__menu-toggle__lines"></span>
-        </button>
-        <ul class="nav__list">
-          <li class="nav__item">
-            <a href="#projects" aria-describedby="projects-section">Projects</a>
-          </li>
-          <li class="nav__item"><a href="#skills">Skills</a></li>
-          <li class="nav__item"><a href="#resume">Resume</a></li>
-          <li class="nav__item"><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
+      <div class="header__container">
+        <h1>Darien Johnas</h1>
+        <nav class="nav" role="navigation" aria-label="Main navigation">
+          <a
+            href="#main"
+            class="nav__logo nav__skip"
+            aria-label="Skip to main content"
+          >
+            <img
+              src="src/img/DevLogo.gif"
+              alt="Darien.dev Logo - Skip to main content"
+              class="nav__logo-img"
+            />
+          </a>
+          <button
+            class="nav__menu-toggle"
+            aria-label="Toggle navigation menu"
+            aria-expanded="false"
+          >
+            <span class="nav__menu-toggle__lines"></span>
+          </button>
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="#projects" aria-describedby="projects-section"
+                >Projects</a
+              >
+            </li>
+            <li class="nav__item"><a href="#skills">Skills</a></li>
+            <li class="nav__item"><a href="#resume">Resume</a></li>
+            <li class="nav__item"><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
     <main id="main" role="main">
@@ -224,9 +237,10 @@
           <a
             href="src/assets/Darien-Johnas-Resume.pdf"
             class="btn download-btn"
-            aria-label="Download resume PDF"
-            download="Darien-Johnas-Resume.pdf"
-            >Download Resume PDF</a
+            aria-label="View resume PDF in new window"
+            target="_blank"
+            rel="noopener noreferrer"
+            >View Resume PDF</a
           >
         </div>
       </section>
@@ -320,6 +334,229 @@
           header.classList.remove('shrunk');
         }
         lastScrollY = window.scrollY;
+      });
+
+      // Modern page lifecycle management using pagehide/pageshow
+      // This is more reliable than the deprecated 'unload' event
+
+      // Generate unique session ID for analytics
+      const sessionId =
+        'session_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+      const pageLoadTime = Date.now();
+
+      function savePortfolioState() {
+        // Save any portfolio state to localStorage
+        const portfolioState = {
+          scrollPosition: window.scrollY,
+          activeSection:
+            document.querySelector('section:target')?.id || getCurrentSection(),
+          timestamp: Date.now(),
+          sessionId: sessionId,
+        };
+        localStorage.setItem('portfolioState', JSON.stringify(portfolioState));
+      }
+
+      function getCurrentSection() {
+        // Determine current section based on scroll position
+        const sections = document.querySelectorAll('section, main > div');
+        let currentSection = 'intro';
+
+        sections.forEach(section => {
+          const rect = section.getBoundingClientRect();
+          if (rect.top <= 200 && rect.bottom > 200) {
+            currentSection =
+              section.id || section.className.split(' ')[0] || 'intro';
+          }
+        });
+
+        return currentSection;
+      }
+
+      function restorePortfolioState() {
+        try {
+          const savedState = localStorage.getItem('portfolioState');
+          if (savedState) {
+            const state = JSON.parse(savedState);
+            // Only restore if saved recently (within 30 minutes)
+            if (Date.now() - state.timestamp < 1800000) {
+              // Restore scroll position with smooth behavior
+              setTimeout(() => {
+                window.scrollTo({
+                  top: state.scrollPosition,
+                  behavior: 'smooth',
+                });
+              }, 100);
+            }
+          }
+        } catch (error) {
+          console.warn('Failed to restore portfolio state:', error);
+        }
+      }
+
+      // Beacon API for reliable logging and analytics
+      function sendAnalyticsBeacon(eventType, data = {}) {
+        const analyticsData = {
+          sessionId: sessionId,
+          timestamp: Date.now(),
+          eventType: eventType,
+          url: window.location.href,
+          userAgent: navigator.userAgent,
+          viewport: {
+            width: window.innerWidth,
+            height: window.innerHeight,
+          },
+          ...data,
+        };
+
+        // Use Beacon API for reliable delivery even during page unload
+        if (navigator.sendBeacon) {
+          // In a real app, this would go to your analytics endpoint
+          const blob = new Blob([JSON.stringify(analyticsData)], {
+            type: 'application/json',
+          });
+
+          // For demo purposes, we'll use a placeholder endpoint
+          // Replace with your actual logging endpoint
+          console.log('Analytics beacon:', analyticsData);
+
+          // Example of actual beacon usage:
+          // navigator.sendBeacon('/api/analytics', blob);
+        } else {
+          // Fallback for older browsers
+          fetch('/api/analytics', {
+            method: 'POST',
+            body: JSON.stringify(analyticsData),
+            headers: { 'Content-Type': 'application/json' },
+            keepalive: true,
+          }).catch(error => console.warn('Analytics fallback failed:', error));
+        }
+      }
+
+      // Track page engagement and interactions
+      let engagementData = {
+        scrollDepth: 0,
+        timeOnPage: 0,
+        interactionCount: 0,
+        sectionsVisited: new Set(),
+      };
+
+      // Use pagehide instead of deprecated unload event
+      window.addEventListener('pagehide', event => {
+        // Calculate final engagement metrics
+        const finalEngagement = {
+          ...engagementData,
+          timeOnPage: Date.now() - pageLoadTime,
+          scrollDepth: Math.max(
+            engagementData.scrollDepth,
+            (window.scrollY /
+              (document.body.scrollHeight - window.innerHeight)) *
+              100
+          ),
+          sectionsVisited: Array.from(engagementData.sectionsVisited),
+          exitType: event.persisted ? 'bfcache' : 'unload',
+        };
+
+        // Send analytics beacon (non-blocking)
+        sendAnalyticsBeacon('page_exit', finalEngagement);
+
+        if (!event.persisted) {
+          // Page is being unloaded (not going to BFCache)
+          savePortfolioState();
+        }
+      });
+
+      // Restore state when page is shown (including from BFCache)
+      window.addEventListener('pageshow', event => {
+        if (event.persisted) {
+          // Page was restored from BFCache
+          restorePortfolioState();
+          sendAnalyticsBeacon('page_restore_bfcache');
+        } else {
+          // Fresh page load
+          sendAnalyticsBeacon('page_load');
+        }
+      });
+
+      // Track visibility changes (tab switches, minimizing)
+      document.addEventListener('visibilitychange', () => {
+        if (document.visibilityState === 'hidden') {
+          // Lightweight save when tab becomes hidden
+          savePortfolioState();
+          sendAnalyticsBeacon('tab_hidden', {
+            timeVisible: Date.now() - pageLoadTime,
+            currentSection: getCurrentSection(),
+          });
+        } else if (document.visibilityState === 'visible') {
+          sendAnalyticsBeacon('tab_visible');
+        }
+      });
+
+      // Enhanced scroll tracking with debouncing
+      let saveStateTimeout;
+      let scrollAnalyticsTimeout;
+
+      window.addEventListener(
+        'scroll',
+        () => {
+          // Update engagement data
+          const scrollPercent =
+            (window.scrollY /
+              (document.body.scrollHeight - window.innerHeight)) *
+            100;
+          engagementData.scrollDepth = Math.max(
+            engagementData.scrollDepth,
+            scrollPercent
+          );
+          engagementData.sectionsVisited.add(getCurrentSection());
+
+          // Debounced state saving
+          clearTimeout(saveStateTimeout);
+          saveStateTimeout = setTimeout(savePortfolioState, 500);
+
+          // Debounced analytics (less frequent than state saving)
+          clearTimeout(scrollAnalyticsTimeout);
+          scrollAnalyticsTimeout = setTimeout(() => {
+            sendAnalyticsBeacon('scroll_milestone', {
+              scrollDepth: Math.round(scrollPercent),
+              currentSection: getCurrentSection(),
+            });
+          }, 2000);
+        },
+        { passive: true }
+      );
+
+      // Track user interactions
+      document.addEventListener('click', event => {
+        engagementData.interactionCount++;
+
+        const target = event.target.closest('a, button, .nav__item');
+        if (target) {
+          sendAnalyticsBeacon('interaction', {
+            elementType: target.tagName.toLowerCase(),
+            elementText: target.textContent?.trim().substring(0, 50),
+            elementClass: target.className,
+            currentSection: getCurrentSection(),
+          });
+        }
+      });
+
+      // Performance monitoring
+      window.addEventListener('load', () => {
+        // Send performance metrics
+        if (performance.getEntriesByType) {
+          const perfData = performance.getEntriesByType('navigation')[0];
+          if (perfData) {
+            sendAnalyticsBeacon('performance', {
+              loadTime: perfData.loadEventEnd - perfData.fetchStart,
+              domContentLoaded:
+                perfData.domContentLoadedEventEnd - perfData.fetchStart,
+              firstPaint:
+                performance
+                  .getEntriesByType('paint')
+                  .find(entry => entry.name === 'first-paint')?.startTime || 0,
+            });
+          }
+        }
       });
     </script>
   </body>

@@ -3,6 +3,7 @@
 
 # Documentation files with specific formatting
 FIXES_APPLIED.md
+DEVELOPMENT_LOG.md
 
 # Node modules (already ignored by default, but explicit)
 node_modules/

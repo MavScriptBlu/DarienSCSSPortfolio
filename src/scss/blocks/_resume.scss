@@ -3,7 +3,7 @@
 
 .resume {
   background:
-    url('../img/background-subtle.svg') no-repeat center center / cover,
+    url('../src/img/background-subtle.svg') no-repeat center center / cover,
     linear-gradient(45deg, #cdb4db, #aaf0d1);
   color: #222;
   padding: 4rem 1rem;
@@ -39,6 +39,7 @@
       margin-bottom: 1.5rem;
       border-bottom: 2px dashed #333;
       padding-bottom: 0.5rem;
+      text-align: center;
     }
   }
 
@@ -64,7 +65,7 @@
 
     .company {
       color: #666;
-      font-size: 0.95rem;
+      font-size: 1.2rem;
       font-style: italic;
       margin-bottom: 0.5rem;
     }
@@ -72,6 +73,7 @@
     p {
       line-height: 1.6;
       margin-bottom: 0.5rem;
+      font-size: 1.2rem;
 
       &.duration {
         margin-bottom: 0.5rem;
