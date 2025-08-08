@@ -4,8 +4,8 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Build outputs
-dist/
+# Build outputs (commented out dist/ for GitHub Pages)
+# dist/
 build/
 *.css.map
 
