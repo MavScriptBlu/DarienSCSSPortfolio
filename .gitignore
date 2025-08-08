@@ -12,7 +12,7 @@ build/
 # CSS files in source directories (should only be in dist/)
 src/**/*.css
 src/**/*.css.map
-*.css
+# *.css (commented out to allow dist/main.css for GitHub Pages)
 **/*.css.map
 
 # IDE and editor files
