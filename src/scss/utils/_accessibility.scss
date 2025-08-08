@@ -1,0 +1,297 @@
+// Accessibility-focused styles for focus indicators, contrast, and keyboard navigation
+
+// High-contrast focus indicator for all interactive elements
+@mixin focus-indicator {
+  outline: 3px solid #007acc;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 1px rgba(0, 122, 204, 0.3);
+  border-radius: 3px;
+}
+
+// Enhanced focus styles for better visibility
+*:focus,
+*:focus-visible {
+  @include focus-indicator;
+}
+
+// Remove default outline and apply custom focus styles
+button:focus,
+a:focus,
+input:focus,
+textarea:focus,
+select:focus,
+[tabindex]:focus {
+  outline: none;
+  @include focus-indicator;
+}
+
+// Ensure focus indicator is visible on all button types
+.btn:focus,
+.btn:focus-visible {
+  @include focus-indicator;
+  transform: translateY(-1px);
+  transition: all 0.2s ease;
+}
+
+// Enhanced skip link styling for better accessibility
+.nav__skip {
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #007acc;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  z-index: 1000;
+  transition: top 0.3s ease;
+
+  &:focus,
+  &:focus-visible {
+    top: 10px;
+    @include focus-indicator;
+  }
+}
+
+// Enhanced navigation focus states
+.nav__item a {
+  position: relative;
+  border-radius: 4px;
+  padding: 8px 12px;
+  margin: 0 4px;
+  display: inline-block;
+  transition: all 0.2s ease;
+
+  &:focus,
+  &:focus-visible {
+    @include focus-indicator;
+    background-color: rgba(0, 122, 204, 0.1);
+  }
+
+  &:hover {
+    background-color: rgba(0, 122, 204, 0.05);
+    text-decoration: underline;
+    text-decoration-color: #007acc;
+    text-underline-offset: 4px;
+  }
+}
+
+// Mobile menu button enhanced accessibility
+.nav__menu-toggle {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 10px;
+  border-radius: 4px;
+
+  &:focus,
+  &:focus-visible {
+    @include focus-indicator;
+  }
+
+  &:hover {
+    background-color: rgba(0, 122, 204, 0.1);
+  }
+}
+
+// Enhanced link contrast and distinguishability
+a {
+  color: #0066cc;
+  text-decoration: underline;
+  text-decoration-color: rgba(0, 102, 204, 0.3);
+  text-underline-offset: 3px;
+  transition: all 0.2s ease;
+
+  &:hover {
+    color: #004499;
+    text-decoration-color: #004499;
+    text-underline-offset: 4px;
+  }
+
+  &:visited {
+    color: #5d4e75;
+    text-decoration-color: rgba(93, 78, 117, 0.3);
+  }
+
+  &:active {
+    color: #003366;
+  }
+}
+
+// Project card links should be more subtle
+.card a {
+  color: #0066cc;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0, 102, 204, 0.3);
+  padding-bottom: 1px;
+
+  &:hover {
+    border-bottom-color: #0066cc;
+    background-color: rgba(0, 102, 204, 0.05);
+  }
+}
+
+// Contact links enhanced accessibility
+.contact-link {
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  margin: 8px 4px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+
+  &:focus,
+  &:focus-visible {
+    @include focus-indicator;
+  }
+
+  &:hover {
+    background-color: rgba(0, 122, 204, 0.1);
+    border-color: #007acc;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+}
+
+// Enhanced button accessibility
+.btn {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+}
+
+// Form input accessibility (for future contact form)
+input,
+textarea,
+select {
+  min-height: 44px;
+  padding: 12px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: border-color 0.2s ease;
+
+  &:focus,
+  &:focus-visible {
+    border-color: #007acc;
+    @include focus-indicator;
+  }
+
+  &:invalid {
+    border-color: #d32f2f;
+  }
+
+  &:valid {
+    border-color: #388e3c;
+  }
+}
+
+// Error and success states for form validation
+.input-error {
+  border-color: #d32f2f !important;
+  background-color: rgba(211, 47, 47, 0.05);
+}
+
+.input-success {
+  border-color: #388e3c !important;
+  background-color: rgba(56, 142, 60, 0.05);
+}
+
+// Screen reader only text
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+// High contrast mode support
+@media (prefers-contrast: high) {
+  a {
+    color: #0000ff;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+  }
+
+  .btn {
+    border: 2px solid currentColor;
+  }
+
+  *:focus,
+  *:focus-visible {
+    outline: 4px solid #000000;
+    outline-offset: 2px;
+  }
+}
+
+// Reduce motion for users who prefer it
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .nav__skip {
+    transition: none;
+  }
+}
+
+// Dark mode considerations for accessibility
+@media (prefers-color-scheme: dark) {
+  :root {
+    --focus-color: #4da6ff;
+    --link-color: #66b3ff;
+    --visited-color: #b399ff;
+  }
+
+  *:focus,
+  *:focus-visible {
+    outline-color: var(--focus-color);
+    box-shadow: 0 0 0 1px rgba(77, 166, 255, 0.3);
+  }
+
+  a {
+    color: var(--link-color);
+
+    &:visited {
+      color: var(--visited-color);
+    }
+  }
+}

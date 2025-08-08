@@ -1,4 +1,10 @@
 // Blocks - Individual component styles following BEM methodology
+
+@forward 'header';
+@forward 'introBanner';
+@forward 'projectCard';
+@forward 'footer';
+@forward 'contactForm';
 @forward 'header';
 @forward 'introBanner';
 @forward 'projectCard';
