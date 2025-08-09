@@ -19,12 +19,26 @@ a {
   color: $accent-color;
   text-decoration: none;
 
+  // Ensure minimum touch target for links
+  min-height: 24px;
+  display: inline-block;
+  padding: 4px 2px; // Adds to touch target without affecting appearance
+
   &:hover {
     text-decoration: underline;
   }
 
   &:focus {
     outline: 2px dotted $accent-color;
+    outline-offset: 2px;
+  }
+
+  // Enhanced focus for keyboard navigation
+  &:focus-visible {
+    outline: 3px solid $accent-color;
+    outline-offset: 3px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
   }
 }
 
@@ -40,8 +54,8 @@ img {
   display: inline-block;
   padding: 0.75rem 1.5rem;
   background: $primary-color;
-  color: #fff;
-  border: 2px solid #fff;
+  color: #2c2c2c;
+  border: 2px solid #2c2c2c;
   box-shadow: 2px 2px #444;
   cursor: pointer;
   font-family: $font-stack;
@@ -50,6 +64,9 @@ img {
   text-align: center;
   transition: all 0.3s ease;
   border-radius: 4px;
+  // Ensure minimum touch target size for accessibility
+  min-width: 44px;
+  min-height: 44px;
 
   &:hover,
   &:focus {
@@ -60,6 +77,12 @@ img {
     box-shadow: 3px 3px #444;
   }
 
+  // Enhanced focus for keyboard navigation
+  &:focus-visible {
+    outline: 3px solid $accent-color;
+    outline-offset: 3px;
+  }
+
   // Mobile: Make buttons as wide as cards
   @include responsive {
     width: 100%;
@@ -67,5 +90,6 @@ img {
     padding: 1rem 1.5rem;
     font-size: 1.2rem;
     margin: 0.5rem auto;
+    min-height: 48px; // Larger touch target for mobile
   }
 }

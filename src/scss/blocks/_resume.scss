@@ -35,6 +35,9 @@
 
     h3 {
       color: $primary-color;
+      background-color: #2c2c2c;
+      border-radius: 5px;
+      padding: 8px;
       font-size: 1.8rem;
       margin-bottom: 1.5rem;
       border-bottom: 2px dashed #333;
@@ -58,6 +61,10 @@
 
     .duration {
       color: $primary-color;
+      background-color: #2c2c2c;
+      border-radius: 5px;
+      padding: 8px;
+      display: inline-block;
       font-weight: bold;
       margin-bottom: 0.5rem;
       font-style: italic;
@@ -86,27 +93,9 @@
   }
 
   .download-btn {
-    background: $primary-color;
-    color: #fff;
-    padding: 1rem 2rem;
-    border: 2px solid #333;
-    box-shadow: 3px 3px #444;
-    cursor: pointer;
-    font-family: $font-stack;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    display: inline-block;
+    // Extend base button styles - remove custom styling for consistency
     margin-top: 2rem;
-    border-radius: 4px;
-    font-size: 1.1rem;
 
-    &:hover,
-    &:focus {
-      background: color.adjust($primary-color, $lightness: -10%);
-      transform: translateY(-2px);
-      outline: 2px solid #333;
-      outline-offset: 2px;
-      box-shadow: 5px 5px #444;
-    }
+    // All other styles (font-size, dimensions, etc.) inherited from base.scss .btn
   }
 }

@@ -49,6 +49,12 @@
     font-size: 1.1rem;
     min-width: 120px;
 
+    // Ensure minimum touch target size for accessibility
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
     &:hover,
     &:focus {
       background: $primary-color;
@@ -60,6 +66,13 @@
       outline-offset: 2px;
     }
 
+    // Enhanced focus for keyboard navigation
+    &:focus-visible {
+      outline: 3px solid $accent-color;
+      outline-offset: 3px;
+      background-color: rgba($accent-color, 0.1);
+    }
+
     span {
       display: block;
       font-weight: bold;
@@ -68,6 +81,7 @@
     @include responsive {
       width: 100%;
       max-width: none;
+      min-height: 48px; // Larger touch target for mobile
     }
   }
 }

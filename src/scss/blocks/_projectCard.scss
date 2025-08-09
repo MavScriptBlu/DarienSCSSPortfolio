@@ -57,6 +57,9 @@
 
     h3 {
       color: $primary-color;
+      background-color: #2c2c2c;
+      border-radius: 5px;
+      padding: 8px;
       font-size: 1.4rem;
       margin-bottom: 0.75rem;
       text-align: center;
@@ -70,31 +73,10 @@
   }
 
   .btn {
+    // Make button match resume section width and centering
     margin: 2rem auto 0;
     display: block;
-    text-align: center;
-    background: $primary-color;
-    color: #fff;
-    padding: 0.5rem 1rem;
-    font-family: $font-stack;
-    border: 2px solid #fff;
-    box-shadow: 2px 2px #444;
-    width: fit-content;
-    text-decoration: none;
-    transition: all 0.3s ease;
-
-    &:hover,
-    &:focus {
-      background: color.adjust($primary-color, $lightness: -10%);
-      transform: translateY(-2px);
-      outline: 2px solid $accent-color;
-      outline-offset: 2px;
-    }
-
-    // Mobile: Make project button as wide as cards
-    @include responsive {
-      width: 100%;
-      max-width: none;
-    }
+    width: 100%;
+    max-width: 600px; // Match resume section max-width
   }
 }

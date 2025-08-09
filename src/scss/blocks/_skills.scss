@@ -39,7 +39,7 @@
     }
 
     h3 {
-      color: $primary-color;
+      color: $primary-color; // Keep original - dark background, light text is fine
       font-size: 1.5rem;
       margin-bottom: 1rem;
       text-align: center;

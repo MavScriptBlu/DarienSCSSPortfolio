@@ -103,12 +103,26 @@
       transition: all 0.3s ease;
       position: relative;
 
+      // Ensure minimum touch target size
+      min-width: 44px;
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
       // Hover effects
       &:hover,
       &:focus {
         background-color: rgba($accent-color, 0.1);
         transform: translateY(-2px);
         outline: none;
+      }
+
+      // Enhanced focus for keyboard navigation
+      &:focus-visible {
+        outline: 3px solid $accent-color;
+        outline-offset: 2px;
+        background-color: rgba($accent-color, 0.2);
       }
 
       // Underline effect
@@ -135,10 +149,31 @@
       background: none;
       border: none;
       cursor: pointer;
-      padding: 0.5rem;
+      padding: 0.75rem;
+
+      // Ensure minimum touch target size
+      min-width: 44px;
+      min-height: 44px;
+      border-radius: 4px;
+      transition: all 0.3s ease;
 
       @include responsive {
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      &:hover,
+      &:focus {
+        background-color: rgba($accent-color, 0.1);
+        outline: none;
+      }
+
+      // Enhanced focus for keyboard navigation
+      &:focus-visible {
+        outline: 3px solid $accent-color;
+        outline-offset: 2px;
+        background-color: rgba($accent-color, 0.2);
       }
 
       &__lines {
