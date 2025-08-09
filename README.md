@@ -1,19 +1,32 @@
 # Darien Johnas - Portfolio Website
 
-A responsive portfolio website showcasing my software development projects and skills, built with modern web technologies and a cyberpunk-inspired design aesthetic.
+A responsive, accessible portfolio website showcasing software development projects and skills, built with modern web technologies and a cyberpunk-inspired design aesthetic. Features comprehensive keyboard navigation, WCAG AA compliance, and enhanced mobile UX.
 
 ## 🚀 Features
 
+- **Full Keyboard Accessibility**: Complete keyboard navigation with proper focus management and no keyboard traps
+- **WCAG AA Compliant**: High contrast text, accessible color schemes, and proper ARIA labeling
+- **Touch-Friendly**: 44px+ minimum touch targets exceeding accessibility standards (48px on mobile)
 - **Responsive Design**: Mobile-first approach with seamless desktop and mobile experiences
 - **Custom Logo Integration**: DevLogo.gif serves as both branding and skip-to-main functionality
 - **Modern SCSS Architecture**: Organized with BEM methodology and component-based structure
 - **Interactive Elements**: Shrinking header on scroll, hover effects, smooth navigation
-- **Mobile-Optimized Layout**: Full-width buttons, larger profile photos, right-aligned hamburger menu
-- **Accessibility Focused**: WCAG compliant with proper ARIA labels and keyboard navigation
+- **Enhanced Mobile UX**: Click-outside-to-close menu, consistent button sizing, optimized layouts
 - **Real Projects**: Showcasing actual development work including WTWR, Spots Platform, and more
 - **Modern Web Standards**: Uses `pagehide`/`pageshow` events and forced colors mode support
 - **State Persistence**: Maintains scroll position and navigation context across page visits
 - **Professional Content**: Authentic resume with real work experience and PDF viewer integration
+
+## 🌟 Accessibility Features
+
+- **Keyboard Navigation**: Full keyboard access with Tab, Enter, Space, and Escape key support
+- **Focus Management**: Visible focus indicators and proper focus trapping in mobile menu
+- **Screen Reader Support**: Comprehensive ARIA labels, roles, and semantic HTML structure
+- **Touch Accessibility**: 44px minimum touch targets (48px on mobile) for all interactive elements
+- **Color Contrast**: WCAG AA compliant color contrast with dark backgrounds for light blue text
+- **Mobile Menu UX**: Click outside to close, Escape key support, proper focus management
+- **Skip Links**: Direct navigation to main content via custom logo integration
+- **Forced Colors Mode**: Full support for Windows High Contrast and forced colors accessibility features
 
 ## 🛠️ Technologies Used
 
@@ -67,25 +80,36 @@ npm run format
 
 ## 🎨 Design System
 
-- **Colors**: Cyberpunk-inspired palette with light blue (#89CFF0) and pink (#f7c5cc) accents
-- **Typography**: VT323 monospace font for retro-tech aesthetic
-- **Effects**: Dashed borders, box shadows, and smooth transitions
-- **Accessibility**: Forced colors mode support, high contrast compatibility
+- **Colors**: Cyberpunk-inspired palette with accessible light blue (#89CFF0) and pink (#f7c5cc) accents
+- **Contrast Solution**: Dark background badges (#2c2c2c) for light blue text ensuring WCAG AA compliance
+- **Typography**: VT323 monospace font for retro-tech aesthetic with enhanced readability
+- **Touch Targets**: 44px+ minimum size with 48px mobile optimization for accessibility compliance
+- **Effects**: Dashed borders, box shadows, smooth transitions, and consistent button styling
+- **Accessibility**: Forced colors mode support, high contrast compatibility, focus-visible indicators
 
 ## ✨ Recent Improvements
 
-- **Custom Logo Integration**: Replaced text-based logo with animated DevLogo.gif that serves dual purpose as skip-to-main link
-- **Mobile UX Enhancements**:
-  - Hamburger menu repositioned to right side
-  - Profile photo enlarged for better mobile visibility (200px vs 150px)
-  - All buttons now match project card width for consistent design
-- **Typography Improvements**: Enhanced font sizes across sections for better readability
-- **Modern Page Lifecycle**: Implemented `pagehide`/`pageshow` events for reliable state management
-- **Beacon API Integration**: Non-blocking analytics and session cleanup using `navigator.sendBeacon()`
-- **Accessibility Enhancements**: Logo skip link with enhanced focus states (now simplified for cleaner design)
-- **Resume Integration**: PDF now opens in new window instead of forcing download
-- **State Persistence**: Automatically saves and restores scroll position and navigation context
-- **Visual Consistency**: Uniform project card heights with flexbox layout and consistent mobile button widths
+### Accessibility Enhancements
+
+- **Comprehensive Keyboard Navigation**: All functionality accessible via keyboard with no traps
+- **Enhanced Focus Management**: Visible focus indicators and proper focus trapping in mobile navigation
+- **Touch Target Compliance**: 44px minimum (48px mobile) exceeding WCAG AA standards
+- **Color Contrast Solution**: Dark background badges for blue text ensuring excellent readability
+- **Mobile Menu UX**: Click outside to close functionality with proper accessibility support
+
+### Button & Layout Consistency
+
+- **Unified Button Styling**: Projects and resume buttons now identical in size and behavior
+- **Centralized CSS Architecture**: All button styling inherited from base.scss for consistency
+- **Mobile Optimization**: Full-width buttons matching section layouts with proper spacing
+- **Visual Consistency**: Uniform project card heights and consistent mobile button presentation
+
+### Modern Web Standards
+
+- **Enhanced Mobile Navigation**: Click outside to close with proper event handling
+- **Improved State Management**: Better scroll position and navigation context persistence
+- **Performance Optimizations**: Debounced event handling and efficient DOM manipulation
+- **Cross-browser Compatibility**: Enhanced support for various accessibility features
 
 ## 🚀 Performance Features
 
