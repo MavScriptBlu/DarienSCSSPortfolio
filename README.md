@@ -48,7 +48,7 @@ A responsive, accessible portfolio website showcasing software development proje
 
 ## 📄 Live Demo & Project Links
 
-- [Portfolio Live Site](https://your-live-site-url.com)
+- [Portfolio Live Site](https://www.mavscript.blue)
 - [All Projects on GitHub](https://github.com/MavScriptBlu)
 
 ## 🏗️ Project Structure
