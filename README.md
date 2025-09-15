@@ -1,4 +1,4 @@
-# Darien Johnas - Portfolio Website
+# Darien Johnas – Portfolio Website
 
 A responsive, accessible portfolio website showcasing software development projects and skills, built with modern web technologies and a cyberpunk-inspired design aesthetic. Features comprehensive keyboard navigation, WCAG AA compliance, and enhanced mobile UX.
 
@@ -46,6 +46,11 @@ A responsive, accessible portfolio website showcasing software development proje
 - **Resume**: Real education and work experience with PDF viewer (opens in new window)
 - **Contact**: Professional links with full-width mobile layout matching project cards
 
+## 📄 Live Demo & Project Links
+
+- [Portfolio Live Site](https://your-live-site-url.com)
+- [All Projects on GitHub](https://github.com/MavScriptBlu)
+
 ## 🏗️ Project Structure
 
 ```bash
@@ -60,6 +65,7 @@ A responsive, accessible portfolio website showcasing software development proje
 │       ├── blocks/         # Component styles (BEM methodology)
 │       └── utils/          # Variables, mixins, and accessibility features
 └── package.json            # Dependencies and build scripts
+└── dist/                   # Compiled CSS output
 ```
 
 ## 🔧 Development
@@ -87,7 +93,9 @@ npm run format
 - **Effects**: Dashed borders, box shadows, smooth transitions, and consistent button styling
 - **Accessibility**: Forced colors mode support, high contrast compatibility, focus-visible indicators
 
-## ✨ Recent Improvements
+## 📝 Recent Changes & Development Log
+
+See [`src/assets/DEVELOPMENT_LOG.md`](src/assets/DEVELOPMENT_LOG.md) for a detailed changelog and technical notes.
 
 ### Accessibility Enhancements
 
@@ -123,5 +131,10 @@ npm run format
 
 ## 📧 Contact
 
-- **GitHub**: [iiBamBlue](https://github.com/iiBamBlue)
+- **GitHub**: [MavScriptBlu](https://github.com/MavScriptBlu)
 - **LinkedIn**: [darien-blue](https://www.linkedin.com/in/darien-blue)
+- **Email**: [darien.johnas@example.com](mailto:darien.johnas@example.com)
+
+---
+
+© 2025 Darien Johnas. All rights reserved.
