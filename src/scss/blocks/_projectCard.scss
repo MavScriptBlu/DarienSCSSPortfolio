@@ -15,10 +15,14 @@
 
   .project-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2.5rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
     max-width: 1400px;
     margin: 0 auto;
+
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
 
     @include responsive {
       grid-template-columns: 1fr;
@@ -102,14 +106,8 @@
       outline-offset: 4px;
     }
 
-    // Featured card modifier
+    // Featured card modifier (same size as other cards, just special border)
     &--featured {
-      grid-column: span 2;
-
-      @include responsive {
-        grid-column: span 1;
-      }
-
       &::before {
         background: linear-gradient(
           135deg,
@@ -120,10 +118,6 @@
           #ffd700
         );
         background-size: 400% 400%;
-      }
-
-      img {
-        height: 300px;
       }
     }
 
