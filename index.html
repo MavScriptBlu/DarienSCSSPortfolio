@@ -39,6 +39,7 @@
             <span class="nav__menu-toggle__lines"></span>
           </button>
           <ul class="nav__list">
+            <li class="nav__item"><a href="#askmav">Ask Mav</a></li>
             <li class="nav__item">
               <a href="#projects" aria-describedby="projects-section"
                 >Projects</a
@@ -80,6 +81,60 @@
         </div>
       </section>
 
+      <section id="askmav" class="askmav" aria-labelledby="askmav-heading">
+        <h2 id="askmav-heading">Ask Mav</h2>
+        <p class="askmav__subtitle">
+          Chat with my AI digital twin powered by Llama 3
+        </p>
+
+        <div
+          class="askmav__container"
+          role="region"
+          aria-label="Chat interface"
+        >
+          <div class="askmav__header">
+            <span class="askmav__header-title">MavScript AI</span>
+            <div class="askmav__header-status">
+              <span class="askmav__header-indicator" aria-hidden="true"></span>
+              <span>Online</span>
+            </div>
+          </div>
+
+          <div
+            class="askmav__messages"
+            id="askmav-messages"
+            role="log"
+            aria-live="polite"
+            aria-label="Chat messages"
+          >
+            <div class="askmav__message askmav__message--assistant">
+              Hey! I'm Mav, Darien's AI assistant. Ask me about her projects,
+              skills, or journey from fabrication to full-stack development!
+            </div>
+          </div>
+
+          <form class="askmav__input-area" id="askmav-form">
+            <label for="askmav-input" class="visually-hidden"
+              >Type your message</label
+            >
+            <input
+              type="text"
+              id="askmav-input"
+              class="askmav__input"
+              placeholder="Ask me anything about Darien..."
+              autocomplete="off"
+              aria-describedby="askmav-hint"
+            />
+            <span id="askmav-hint" class="visually-hidden">
+              Press Enter or click Send to submit your question
+            </span>
+            <button type="submit" class="askmav__send" aria-label="Send message">
+              Send
+            </button>
+          </form>
+        </div>
+      </section>
+
       <section
         id="projects"
         class="projects"
@@ -87,55 +142,118 @@
       >
         <h2 id="projects-heading">Latest Projects</h2>
         <div class="project-cards">
+          <!-- PixelBoof - Featured -->
+          <article class="card card--featured">
+            <img
+              src="./src/img/wtwrProjectDesktop.jpeg"
+              alt="PixelBoof GenAI Photo Booth - interface showing AI-generated photo transformations"
+            />
+            <h3>PixelBoof</h3>
+            <p>
+              GenAI-powered photo booth experience that transforms portraits
+              using cutting-edge AI models. Built for Mid-State Tech-Con 2.0,
+              producing 100+ physical stickers for event attendees.
+            </p>
+            <div class="card__tags">
+              <span class="card__tag">GenAI</span>
+              <span class="card__tag">React</span>
+              <span class="card__tag">Cloudflare Workers</span>
+              <span class="card__tag">AI/ML</span>
+            </div>
+            <div class="card__links">
+              <a
+                href="https://github.com/MavScriptBlu"
+                class="card__link card__link--primary"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View Project
+              </a>
+              <a
+                href="https://github.com/MavScriptBlu"
+                class="card__link card__link--secondary"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub
+              </a>
+            </div>
+          </article>
+
+          <!-- MavScript Universe -->
           <article class="card">
             <img
               src="./src/img/todo-app.jpeg"
-              alt="Preview of ToDo App project"
+              alt="MavScript Universe - 3D trading card collection interface"
             />
-            <h3>ToDo App</h3>
-            <p>A simple and intuitive task management app built with React.</p>
+            <h3>MavScript Universe</h3>
+            <p>
+              Interactive 3D trading card collection with CSS physics-powered
+              holographic effects. A digital retrospective of my journey styled
+              as a legendary card game.
+            </p>
+            <div class="card__tags">
+              <span class="card__tag">React 18</span>
+              <span class="card__tag">3D CSS</span>
+              <span class="card__tag">Vite</span>
+              <span class="card__tag">SCSS</span>
+            </div>
+            <div class="card__links">
+              <a
+                href="https://github.com/MavScriptBlu"
+                class="card__link card__link--primary"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View Cards
+              </a>
+              <a
+                href="https://github.com/MavScriptBlu"
+                class="card__link card__link--secondary"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub
+              </a>
+            </div>
           </article>
 
+          <!-- WTWR -->
           <article class="card">
             <img
               src="./src/img/wtwrProjectDesktop.jpeg"
-              alt="Preview of WTWR project"
+              alt="WTWR - What to Wear Right Now application showing weather-based outfit suggestions"
             />
-            <h3>WTWR – What to Wear Right Now</h3>
+            <h3>WTWR - What to Wear</h3>
             <p>
-              React app with weather-based outfit suggestions, modals, and
-              responsive toggles.
+              Weather-based outfit recommendation app with real-time weather
+              integration, user wardrobe management, temperature unit toggles,
+              and responsive modals.
             </p>
-          </article>
-          <article class="card">
-            <img
-              src="./src/img/spotsProjectDesktopView.png"
-              alt="Preview of Spots Platform project"
-            />
-            <h3>Spots Platform</h3>
-            <p>
-              Responsive layout with Webpack optimization, hover effects, and
-              form validation.
-            </p>
-          </article>
-          <article class="card">
-            <img
-              src="./src/img/craftandbrew.jpeg"
-              alt="Preview of Craft and Brew project"
-            />
-            <h3>Craft and Brew</h3>
-            <p>
-              A responsive coffee shop website with modern design, interactive
-              menu, and reservation system.
+            <div class="card__tags">
+              <span class="card__tag">React</span>
+              <span class="card__tag">Node.js</span>
+              <span class="card__tag">MongoDB</span>
+              <span class="card__tag">REST API</span>
+            </div>
+            <div class="card__links">
               <a
-                href="https://mavscriptblu.github.io/se_project_coffeeshop/"
-                class="btn"
-                role="button"
+                href="https://www.mavscript.blue/#wtwr"
+                class="card__link card__link--primary"
                 target="_blank"
                 rel="noopener noreferrer"
-                >View Live Site</a
               >
-            </p>
+                Live Demo
+              </a>
+              <a
+                href="https://github.com/MavScriptBlu/se_project_react"
+                class="card__link card__link--secondary"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub
+              </a>
+            </div>
           </article>
         </div>
         <a
@@ -157,29 +275,61 @@
             <ul>
               <li>HTML5 & CSS3</li>
               <li>JavaScript (ES6+)</li>
-              <li>React</li>
+              <li>React & Next.js</li>
               <li>SCSS/Sass</li>
+              <li>3D CSS / WebGL</li>
               <li>Responsive Design</li>
             </ul>
           </div>
           <div class="skill-category">
-            <h3>Backend</h3>
+            <h3>Backend & Data</h3>
             <ul>
-              <li>Node.js</li>
-              <li>Express.js</li>
+              <li>Node.js & Express</li>
               <li>MongoDB</li>
+              <li>Snowflake (GenAI Certified)</li>
               <li>REST APIs</li>
+              <li>Cloudflare Workers</li>
               <li>Authentication</li>
             </ul>
           </div>
           <div class="skill-category">
-            <h3>Tools & Others</h3>
+            <h3>AI & GenAI</h3>
+            <ul>
+              <li>Llama 3 / LLM Integration</li>
+              <li>Prompt Engineering</li>
+              <li>AI-Powered Applications</li>
+              <li>Cloudflare AI</li>
+              <li>Image Generation APIs</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3>Tools & Methods</h3>
             <ul>
               <li>Git & GitHub</li>
-              <li>Webpack</li>
-              <li>npm/yarn</li>
-              <li>VS Code</li>
-              <li>Figma</li>
+              <li>Webpack & Vite</li>
+              <li>Figma & Design Tools</li>
+              <li>Agile / Scrum</li>
+              <li>Technical Documentation</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3>Certifications</h3>
+            <ul>
+              <li>TripleTen Software Engineering</li>
+              <li>Snowflake GenAI</li>
+              <li>MongoDB Basics</li>
+              <li>Udacity Frontend NanoDegree</li>
+              <li>SQL Fundamentals</li>
+            </ul>
+          </div>
+          <div class="skill-category">
+            <h3>Unique Background</h3>
+            <ul>
+              <li>Production Optimization</li>
+              <li>Process Automation</li>
+              <li>Quality Control Systems</li>
+              <li>Cross-functional Training</li>
+              <li>Problem-solving from Fabrication</li>
             </ul>
           </div>
         </div>
@@ -672,6 +822,157 @@
           }
         }
       });
+
+      // ============================================
+      // AskMav Chat Functionality
+      // ============================================
+      const ASKMAV_API_URL = 'YOUR_CLOUDFLARE_WORKER_URL'; // Replace with your Worker URL
+
+      class AskMavChat {
+        constructor() {
+          this.form = document.getElementById('askmav-form');
+          this.input = document.getElementById('askmav-input');
+          this.messages = document.getElementById('askmav-messages');
+          this.sendButton = this.form?.querySelector('.askmav__send');
+
+          if (this.form) {
+            this.init();
+          }
+        }
+
+        init() {
+          this.form.addEventListener('submit', e => this.handleSubmit(e));
+          this.input.addEventListener('keydown', e => {
+            if (e.key === 'Enter' && !e.shiftKey) {
+              e.preventDefault();
+              this.form.dispatchEvent(new Event('submit'));
+            }
+          });
+        }
+
+        async handleSubmit(e) {
+          e.preventDefault();
+          const message = this.input.value.trim();
+          if (!message) return;
+
+          // Add user message
+          this.addMessage(message, 'user');
+          this.input.value = '';
+          this.setLoading(true);
+
+          // Show typing indicator
+          const typingIndicator = this.addTypingIndicator();
+
+          try {
+            const response = await this.sendMessage(message);
+            typingIndicator.remove();
+            this.addMessage(response, 'assistant');
+          } catch (error) {
+            typingIndicator.remove();
+            this.addMessage(
+              "Sorry, I'm having trouble connecting right now. Please try again later or reach out via the contact section!",
+              'assistant'
+            );
+            console.error('AskMav error:', error);
+          } finally {
+            this.setLoading(false);
+            this.input.focus();
+          }
+        }
+
+        async sendMessage(message) {
+          const response = await fetch(ASKMAV_API_URL, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ message }),
+          });
+
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+
+          const data = await response.json();
+          return data.response || data.message || 'I received your message!';
+        }
+
+        addMessage(text, sender) {
+          const messageEl = document.createElement('div');
+          messageEl.className = `askmav__message askmav__message--${sender}`;
+          messageEl.textContent = text;
+          this.messages.appendChild(messageEl);
+          this.scrollToBottom();
+          return messageEl;
+        }
+
+        addTypingIndicator() {
+          const indicator = document.createElement('div');
+          indicator.className =
+            'askmav__message askmav__message--assistant askmav__message--typing';
+          indicator.setAttribute('aria-label', 'Mav is typing');
+          indicator.innerHTML = '<span></span><span></span><span></span>';
+          this.messages.appendChild(indicator);
+          this.scrollToBottom();
+          return indicator;
+        }
+
+        scrollToBottom() {
+          this.messages.scrollTop = this.messages.scrollHeight;
+        }
+
+        setLoading(loading) {
+          this.sendButton.disabled = loading;
+          this.input.disabled = loading;
+        }
+      }
+
+      // Initialize AskMav chat
+      new AskMavChat();
+
+      // ============================================
+      // 3D Card Holographic Effect
+      // ============================================
+      function initCard3DEffects() {
+        const cards = document.querySelectorAll('.card');
+
+        cards.forEach(card => {
+          card.addEventListener('mousemove', e => {
+            // Respect reduced motion preference
+            if (
+              window.matchMedia('(prefers-reduced-motion: reduce)').matches
+            ) {
+              return;
+            }
+
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+
+            const rotateX = (y - centerY) / 20;
+            const rotateY = (centerX - x) / 20;
+
+            // Update CSS custom properties for glow position
+            const mouseXPercent = (x / rect.width) * 100;
+            const mouseYPercent = (y / rect.height) * 100;
+            card.style.setProperty('--mouse-x', `${mouseXPercent}%`);
+            card.style.setProperty('--mouse-y', `${mouseYPercent}%`);
+
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+          });
+
+          card.addEventListener('mouseleave', () => {
+            card.style.transform =
+              'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
+          });
+        });
+      }
+
+      // Initialize 3D card effects
+      initCard3DEffects();
     </script>
   </body>
 </html>
