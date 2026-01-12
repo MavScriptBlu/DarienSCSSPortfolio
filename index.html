@@ -128,7 +128,11 @@
             <span id="askmav-hint" class="visually-hidden">
               Press Enter or click Send to submit your question
             </span>
-            <button type="submit" class="askmav__send" aria-label="Send message">
+            <button
+              type="submit"
+              class="askmav__send"
+              aria-label="Send message"
+            >
               Send
             </button>
           </form>
@@ -145,8 +149,8 @@
           <!-- PixelBoof - Featured -->
           <article class="card card--featured">
             <img
-              src="./src/img/wtwrProjectDesktop.jpeg"
-              alt="PixelBoof GenAI Photo Booth - interface showing AI-generated photo transformations"
+              src="./src/img/pixelboof-sticker.png"
+              alt="PixelBoof GenAI Photo Booth - 90s pixel art sticker generated from a photo"
             />
             <h3>PixelBoof</h3>
             <p>
@@ -162,7 +166,7 @@
             </div>
             <div class="card__links">
               <a
-                href="https://github.com/MavScriptBlu"
+                href="https://pixelbooth-784690008259.us-central1.run.app/"
                 class="card__link card__link--primary"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -170,7 +174,7 @@
                 View Project
               </a>
               <a
-                href="https://github.com/MavScriptBlu"
+                href="https://github.com/MavScriptBlu/PixelBoof"
                 class="card__link card__link--secondary"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -183,8 +187,8 @@
           <!-- MavScript Universe -->
           <article class="card">
             <img
-              src="./src/img/todo-app.jpeg"
-              alt="MavScript Universe - 3D trading card collection interface"
+              src="./src/img/mavscript-universe.png"
+              alt="MavScript Universe - 9-card legendary collection featuring coding companions"
             />
             <h3>MavScript Universe</h3>
             <p>
@@ -200,7 +204,7 @@
             </div>
             <div class="card__links">
               <a
-                href="https://github.com/MavScriptBlu"
+                href="https://mavscriptblu.github.io/trading-cards-react/"
                 class="card__link card__link--primary"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -208,7 +212,7 @@
                 View Cards
               </a>
               <a
-                href="https://github.com/MavScriptBlu"
+                href="https://github.com/MavScriptBlu/trading-cards-react"
                 class="card__link card__link--secondary"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -939,9 +943,7 @@
         cards.forEach(card => {
           card.addEventListener('mousemove', e => {
             // Respect reduced motion preference
-            if (
-              window.matchMedia('(prefers-reduced-motion: reduce)').matches
-            ) {
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
               return;
             }
 
