@@ -765,6 +765,8 @@ img {
   display: flex;
   gap: 1rem;
   margin-top: 1rem;
+  position: relative;
+  z-index: 1;
 }
 .projects .card__link {
   flex: 1;
@@ -778,6 +780,9 @@ img {
   align-items: center;
   justify-content: center;
   text-decoration: none;
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
 }
 .projects .card__link--primary {
   background: #89cff0;
